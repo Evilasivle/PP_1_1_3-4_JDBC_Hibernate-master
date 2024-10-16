@@ -20,11 +20,8 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void saveUser(String name, String lastName, byte age) {
-        try {
             userDaoJDBC.saveUser(name, lastName, age);
-        } catch (Exception e) {
-            throw new RuntimeException(e);
-        }
+
     }
     @Override
     public void removeUserById(long id) {
