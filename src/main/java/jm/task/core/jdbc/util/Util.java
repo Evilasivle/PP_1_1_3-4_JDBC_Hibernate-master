@@ -7,6 +7,7 @@ public class Util {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root";
     private static final String databaseName = "users";
+
     // реализуйте настройку соеденения с БД
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(URL + databaseName, USERNAME, PASSWORD);
