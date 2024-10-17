@@ -10,14 +10,13 @@ public class Util {
 
     // реализуйте настройку соеденения с БД
     public static Connection getConnection() {
-        try(Connection connection = DriverManager.getConnection(URL + databaseName, USERNAME, PASSWORD)) {
-            return connection;
+        Connection conn;
+        try {
+            conn = DriverManager.getConnection(URL + databaseName, USERNAME, PASSWORD);
         } catch (SQLException e) {
             throw new RuntimeException(e);
-        } finally {
-            
         }
-
+        return conn;
     }
 }
 

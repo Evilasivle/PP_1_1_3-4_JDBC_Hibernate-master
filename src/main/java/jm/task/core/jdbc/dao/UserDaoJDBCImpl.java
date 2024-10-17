@@ -21,9 +21,7 @@ public class UserDaoJDBCImpl implements UserDao {
     private final static String DELETE = "DELETE FROM users WHERE id = ?";
     private final static String CLEAN = "DELETE FROM users";
 
-
     public UserDaoJDBCImpl() {
-
     }
 
     @Override
@@ -33,12 +31,10 @@ public class UserDaoJDBCImpl implements UserDao {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
     public void dropUsersTable() {
-
         try (Statement statement = Util.getConnection().createStatement()) {
             statement.execute(DROP);
         } catch (SQLException e) {
@@ -98,5 +94,4 @@ public class UserDaoJDBCImpl implements UserDao {
             throw new RuntimeException(e.getMessage(), e.getCause());
         }
     }
-
 }
